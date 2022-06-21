@@ -13,10 +13,11 @@ const addMovie = (movieObj) => {
 const listMovies = () => {
   try {
     const movieList = fs.readFileSync("./storage.json");
-    console.timeLog(movieList);
+    const list = JSON.parse(movieList);
+    console.log(list);
   } catch (error) {
     console.log(error);
   }
 };
 
-modules.exports = { addMovie, listMovies };
+module.exports = { addMovie, listMovies };
